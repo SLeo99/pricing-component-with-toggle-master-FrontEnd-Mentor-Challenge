@@ -1,0 +1,142 @@
+@import '../../variables';
+
+.card {
+  background-color: $VeryLightGrayishBlue;
+  text-align: center;
+  width: calc(100% - 3rem);
+  font-weight: 700;
+  margin-bottom: 2.1rem;
+  padding-bottom: .85rem;
+  border-radius: .5rem;
+  box-shadow: 0px 0px 40px 0px $LightGrayishBlue;
+  min-width: 326px;
+
+  &__price > p {
+    padding-top: 1.85rem;
+    // color: red;
+    &:nth-child(1) {
+      font-size: 1.15rem;
+      color: $GrayishBlue;
+    }
+    &:nth-child(2) {
+      font-size: 4.5rem;
+      color: $DarkGrayishBlue;
+      padding-top: 0.4rem;
+      letter-spacing: -1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & > span {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  &__details {
+    padding-block: .75rem;
+    $lineHeight: 1px;
+    $lineOpacity: .5;
+    & > p {
+      padding-block: 1rem;
+      position: relative;
+      width: calc(100% - 3.5rem);
+      margin-inline: auto;
+      color: $GrayishBlue;
+      &::before {
+        content: '';
+        width: 100%;
+        height: $lineHeight;
+        background-color: $LightGrayishBlue;
+        top: 0;
+        left: 0;
+        position: absolute;
+        opacity: $lineOpacity;
+      }
+      &:nth-child(3)::after {
+        content: '';
+        width: 100%;
+        height: $lineHeight;
+        background-color: $LightGrayishBlue;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        opacity: $lineOpacity;
+      }
+    }
+  }
+  &__btn {
+    width: calc(100% - 3.5rem);
+    padding-block: 15px;
+    border-radius: .5rem;
+    border: none;
+    text-transform: uppercase;
+    font-size: .8rem;
+    letter-spacing: 1.5px;
+    margin-block: 1.1rem;
+    background: $gradientBtns;
+    color: $VeryLightGrayishBlue;
+    &:hover {
+      background: $VeryLightGrayishBlue;
+      color: $gradientRight;
+      outline: 1px solid $gradientRight;
+      cursor: pointer;
+    }
+  }
+
+
+
+  &--gradient {
+    background: linear-gradient(90deg, $gradientLeft, $gradientRight);
+  }
+  &__price--white{
+    & > p {
+      &:nth-child(1), &:nth-child(2){
+        color: $VeryLightGrayishBlue;
+      }
+    }
+  }
+  &__details--white{
+    & > p {
+      color: $VeryLightGrayishBlue;
+    }
+  }
+  &__btn--white{
+    background: $VeryLightGrayishBlue;
+    color: $gradientRight;
+    &:hover{
+      background: linear-gradient(90deg, $gradientLeft, $gradientRight);
+      color: $VeryLightGrayishBlue;
+      outline: 1px solid $VeryLightGrayishBlue;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .card {
+
+    min-width: 351px;
+    width: 100%;
+    padding-inline: 2.675rem;
+    margin-block: 2px;
+    padding-bottom: 0rem;
+    margin-bottom: 2rem;
+    &--gradient {
+      margin-block: 0rem;
+      padding-bottom: 3.75rem;
+      padding-top: 1.5rem;
+    }
+    &__price > p:nth-child(1){
+      padding: 0;
+      margin-top: 1.5rem;
+    }
+    &__price--white > p:nth-child(1){
+      margin-top: 2rem;
+    }
+    &__details > p {
+      width: 100%;
+      margin-inline: 0;
+    }
+    &__btn {
+      width: 100%;
+    }
+  }
+}

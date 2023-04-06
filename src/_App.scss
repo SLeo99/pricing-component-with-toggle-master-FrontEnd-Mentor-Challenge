@@ -1,0 +1,30 @@
+@import './variables.scss';
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $ffMontserrat;
+  position: relative;
+  &__title {
+    margin-bottom: 2.5rem;
+    color: $GrayishBlue
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .App {
+    &__title {
+      margin-bottom: 41px;
+      margin-top: 6px;
+    }
+    &__cards {
+      display: grid;
+      grid-template-areas: 
+      'card1 card2 card3';
+      place-items: center;
+      margin-top: 3.2rem;
+    }
+  }
+}

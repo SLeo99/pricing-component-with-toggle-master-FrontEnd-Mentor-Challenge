@@ -1,0 +1,49 @@
+@import '../../variables';
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+  width: calc(100% - 8.5rem);
+  margin-bottom: 5rem !important;
+  & > span {
+    font-size: 15px;
+    color: $LightGrayishBlue;
+  }
+  &__btn {
+    min-height: 2rem;
+    width: 3.5rem;
+    background: $gradientBtns;
+    border-radius: 2rem;
+    position: relative;
+    cursor: pointer;
+    &::after {
+      content: '';
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      position: absolute;
+      background-color: $VeryLightGrayishBlue;
+    }
+    &[aria-controls="annually"]::after {
+        top: calc(0% + .25rem);
+        left: calc(0% + .25rem);
+        background-color: $VeryLightGrayishBlue;
+        transition: left .25s ease-in-out;
+    }
+    &[aria-controls="monthly"]::after {
+        top: calc(0% + .25rem);
+        left: calc(0% + 1.75rem);
+        transition: left .25s ease-in-out;
+    }
+  }
+}
+
+@media screen and (min-width:1024px){
+  .toggle {
+    margin-bottom: 14px !important;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
